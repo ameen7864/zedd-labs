@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 
 export function Dashboard() {
   const [controller, dispatch] = useMaterialTailwindController();
-  const { sidenavType, languages } = controller;
+  const { sidenavType } = controller;
 
   return (
     <div className="min-h-screen bg-blue-gray-50/50 ">

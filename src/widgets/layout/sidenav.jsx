@@ -1,34 +1,15 @@
+import { setOpenSidenav, useMaterialTailwindController } from "@/context";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Button, IconButton, Typography } from "@material-tailwind/react";
 import PropTypes from "prop-types";
-import { IoIosLogOut } from "react-icons/io";
-import { IoSettingsOutline } from "react-icons/io5";
-import { MdOutlineShoppingBag } from "react-icons/md";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { setOpenSidenav, useMaterialTailwindController } from "@/context";
-import { t } from "i18next";
 import { useState } from "react";
-import { AiFillPieChart } from "react-icons/ai";
-import { FaUserCircle } from "react-icons/fa";
-import { LuFiles } from "react-icons/lu";
+import { Link, NavLink } from "react-router-dom";
 
 export function Sidenav({ brandImg, brandName, routes }) {
   const [controller, dispatch] = useMaterialTailwindController();
   const { sidenavColor, openSidenav } = controller;
   const sidenavType = "dark";
-  const sales = localStorage.getItem("sales");
-  const navigate = useNavigate();
 
-  const handlelogout = () => {
-    navigate(`/auth/sign-in`);
-    localStorage.clear();
-  };
-
-  const sidenavTypes = {
-    dark: "bg-red-500",
-    white: "bg-white shadow-sm",
-    transparent: "bg-transparent",
-  };
   const [open, setOpen] = useState(0);
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
   function Icon({ id, open }) {
@@ -58,16 +39,13 @@ export function Sidenav({ brandImg, brandName, routes }) {
         openSidenav ? "translate-x-0" : "-translate-x-80"
       } custom-scrollbar fixed inset-0 z-50  h-[calc(100vh)] w-72 overflow-hidden rounded-e-[50px] transition-transform duration-300 hover:overflow-y-auto xl:translate-x-0`}
     >
-      <div className="relative mt-10">
-        <div className="flex justify-end relative top-2 right-3">
-          {" "}
-          <XMarkIcon
-            strokeWidth={2}
-            className="h-6 w-6 xl:hidden cursor-pointer"
-          />
-        </div>
-        <Link to="/">
-          <div className="flex my-6 px-9" />
+      <div className={`relative`}>
+        <Link to="/" className="py-6 px-8 text-center">
+          <Typography
+            variant="h6"
+            className="mt-8"
+            color={sidenavType === "dark" ? "white" : "blue-gray"}
+          ></Typography>
         </Link>
         <IconButton
           variant="text"
@@ -116,7 +94,10 @@ export function Sidenav({ brandImg, brandName, routes }) {
                       fullWidth
                     >
                       {icon}
-                      <Typography color="inherit" className=" capitalize">
+                      <Typography
+                        color="inherit"
+                        className=" capitalize text-xl"
+                      >
                         {name}
                       </Typography>
                     </Button>

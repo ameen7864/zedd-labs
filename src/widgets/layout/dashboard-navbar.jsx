@@ -1,31 +1,16 @@
-import { useLocation, Link } from "react-router-dom";
+import { setOpenSidenav, useMaterialTailwindController } from "@/context";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import {
-  Navbar,
-  Typography,
-  Button,
-  IconButton,
-  Breadcrumbs,
-  Input,
-  Menu,
-  MenuHandler,
-  MenuList,
-  MenuItem,
   Avatar,
+  Breadcrumbs,
+  IconButton,
+  Navbar,
+  Option,
+  Select,
 } from "@material-tailwind/react";
-import {
-  UserCircleIcon,
-  Cog6ToothIcon,
-  BellIcon,
-  ClockIcon,
-  CreditCardIcon,
-  Bars3Icon,
-} from "@heroicons/react/24/solid";
-import {
-  useMaterialTailwindController,
-  setOpenConfigurator,
-  setOpenSidenav,
-} from "@/context";
-import { MdOutlineArrowDropDown } from "react-icons/md";
+import { FaBell } from "react-icons/fa";
+import { IoGiftOutline } from "react-icons/io5";
+import { useLocation } from "react-router-dom";
 
 export function DashboardNavbar() {
   const [controller, dispatch] = useMaterialTailwindController();
@@ -35,37 +20,54 @@ export function DashboardNavbar() {
 
   return (
     <Navbar
-      color={fixedNavbar ? "white" : "white"}
-      className={`rounded-xl transition-all `}
+      className={`rounded-xl transition-all bg-white `}
       fullWidth
       blurred={fixedNavbar}
     >
       <div className="flex flex-col-reverse justify-between gap-6 md:flex-row md:items-center">
-        <div className="capitalize">
+        <div className="capitalize flex">
+          <IconButton
+            variant="text"
+            color="blue-gray"
+            className="grid xl:hidden "
+            onClick={() => setOpenSidenav(dispatch, !openSidenav)}
+          >
+            <Bars3Icon strokeWidth={3} className="h-6 w-6 text-blue-gray-500" />
+          </IconButton>
           <Breadcrumbs
             className={`bg-transparent p-0 transition-all ${
               fixedNavbar ? "mt-1" : ""
             }`}
           >
-            <div className="flex gap-3">
-              <Typography variant="h6" color="blue-gray">
-                Default Project
-              </Typography>
-              <MdOutlineArrowDropDown size={28} />
+            <div className="">
+              <div className="w-24">
+                <select name="" id="" className="bg-transparent px-3 font-bold">
+                  <option value="">Default Project</option>
+                </select>
+              </div>
             </div>
           </Breadcrumbs>
         </div>
         <div className="flex items-center">
+          <div className="flex gap-6">
+            <IoGiftOutline size={30} color="red" />
+            <FaBell size={24} color="black" className="mt-1 mr-3" />
+          </div>
           <div className="mr-auto flex justify-center items-center  ">
             <Avatar
               src="https://docs.material-tailwind.com/img/face-2.jpg"
               alt="avatar"
             />
 
-            <Typography variant="h6" color="blue-gray" className="mx-2">
-              Daren Joe
-            </Typography>
-            <MdOutlineArrowDropDown size={28} />
+            <div className=" ml-2 ">
+              <select
+                name=""
+                id=""
+                className="bg-transparent text-black px-3 font-bold"
+              >
+                <option value="">Daren Joe</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
