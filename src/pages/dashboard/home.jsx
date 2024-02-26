@@ -77,7 +77,7 @@ export function Home() {
 
   return (
     <>
-      <div className="mb-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="mb-4 grid grid-cols-1 md:min-w-2 max-w-1/2 xl:grid-cols-4 gap-4">
         <div className="col-span-3 grid-cols-2 md:grid-cols-2 xl:grid-cols-4 pr-4">
           <Card className="w-full overflow-auto mr-2 rounded-2xl border border-blue-gray-00 mt-6">
             <CardBody className="p-4 h-auto">
@@ -148,7 +148,7 @@ export function Home() {
         </div>
       </div>
 
-      <div className="mb-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="mb-4 grid grid-cols-1 md:min-w-2 max-w-1/2 xl:grid-cols-4 gap-4">
         <div className="col-span-3 grid-cols-2 md:grid-cols-2 xl:grid-cols-4 pr-4">
           <Card className="w-full mr-2 overflow-auto rounded-2xl border border-blue-gray-00 -mt-6">
             <CardBody className="p-4 h-auto">
