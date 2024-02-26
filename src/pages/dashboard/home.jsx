@@ -98,7 +98,7 @@ export function Home() {
                     <div className="border rounded-full w-11 bg-[#E6F1FF] p-2">
                       {data.img}
                     </div>
-                    <div className="mx-1 my-6 text-xl text-gray-500 truncate uppercase">
+                    <div className="mx-1 my-6 text-xl text-gray-500 truncate hover:whitespace-normal uppercase">
                       {data?.name}
                     </div>
                     <div className="mx-2 font-bold text-3xl mb-2 text-black">
