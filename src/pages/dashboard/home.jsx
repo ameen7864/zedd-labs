@@ -77,12 +77,11 @@ export function Home() {
 
   return (
     <>
-      <div className="mb-4 grid grid-cols-1 xl:grid-cols-4 gap-4">
-        <div className="col-span-3 pr-4">
+      <div className="mb-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+        <div className="col-span-3 grid-cols-2 md:grid-cols-2 xl:grid-cols-4 pr-4">
           <Card className="w-full overflow-auto mr-2 rounded-2xl border border-blue-gray-00 mt-6">
             <CardBody className="p-4 h-auto">
               <div className="flex justify-between items-center mb-4 font-bold">
-                {" "}
                 <div className="font-bold text-xl text-black">Running jobs</div>
                 <div className="flex text-black">
                   <select name="" id="">
@@ -92,12 +91,14 @@ export function Home() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {runningdata.map((data, i) => (
-                  <div key={data} className="col-span-1 my-2">
-                    <div className="border  rounded-full w-11 bg-[#E6F1FF] p-2">
-                      {/* <img src={render} alt="" /> */}
+                  <div
+                    key={data}
+                    className="col-span-1 my-2 md:col-span-1 lg:col-span-1"
+                  >
+                    <div className="border rounded-full w-11 bg-[#E6F1FF] p-2">
                       {data.img}
                     </div>
-                    <div className="mx-1 my-6 text-xl text-gray-500 uppercase">
+                    <div className="mx-1 my-6 text-xl text-gray-500 truncate uppercase">
                       {data?.name}
                     </div>
                     <div className="mx-2 font-bold text-3xl mb-2 text-black">
@@ -111,7 +112,6 @@ export function Home() {
           <Card className="w-full overflow-auto mr-2 rounded-2xl border border-blue-gray-00 mt-6">
             <CardBody className="p-4 h-auto">
               <div className="flex justify-between items-center mb-4 font-bold">
-                {" "}
                 <div className="font-bold text-xl text-black">
                   Running Frames
                 </div>
@@ -123,12 +123,14 @@ export function Home() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {runningdata.map((data, i) => (
-                  <div key={data} className="col-span-1 my-2">
-                    <div className="border  rounded-full w-11 bg-[#E6F1FF] p-2">
-                      {/* <img src={render} alt="" /> */}
+                  <div
+                    key={data}
+                    className="col-span-1 my-2 md:col-span-1 lg:col-span-1"
+                  >
+                    <div className="border rounded-full w-11 bg-[#E6F1FF] p-2">
                       {data.img}
                     </div>
-                    <div className="mx-1 my-6 text-xl text-gray-500 uppercase">
+                    <div className="mx-1 my-6 text-xl text-gray-500 truncate uppercase">
                       {data?.name}
                     </div>
                     <div className="mx-2 font-bold text-3xl mb-2 text-black">
@@ -141,13 +143,13 @@ export function Home() {
           </Card>
         </div>
 
-        <div className="col-span-1 my-6 ">
+        <div className=" col-span-1 sm:w-full md:w-full my-6">
           <Example />
         </div>
       </div>
 
-      <div className="mb-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
-        <div className="col-span-3 pr-4">
+      <div className="mb-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+        <div className="col-span-3 grid-cols-2 md:grid-cols-2 xl:grid-cols-4 pr-4">
           <Card className="w-full mr-2 overflow-auto rounded-2xl border border-blue-gray-00 -mt-6">
             <CardBody className="p-4 h-auto">
               <div className="font-bold text-xl text-black mb-6 my-3 mx-3">
@@ -157,59 +159,66 @@ export function Home() {
             </CardBody>
           </Card>
         </div>
-        <div className="md:col-span-1 flex flex-col lg:flex-row gap-2 md:h-[360px]">
-          <Card className="w-full lg:w-1/2 overflow-hidden rounded-2xl border border-blue-gray-00 mt-6 md:mr-2">
-            <div className="m-5">
-              <div className="text-xl font-bold my-1 mb-5 text-black">
-                {" "}
-                Balance
-              </div>
-              <div className="text-2xl font-bold my-2 text-black">
-                <span>$</span>458
-              </div>
-              <div className="flex justify-between my-6">
-                <div>
-                  <div>Coupon</div>
-                  <div className="text-black text-xl font-bold">$25</div>
-                </div>
-                <div className="border-l border-gray-300 pl-4">
-                  <div>Credits</div>
-                  <div className="text-black text-xl font-bold">$0</div>
-                </div>
-              </div>
 
-              <div className="text-xs text-gray-700 my-4">
-                Hours Remaining{" "}
-                <span className="text-bold text-black">20:59:59</span>
-              </div>
-              <Button
-                variant="outlined"
-                className="rounded-full border-[#0171FE] text-[#0171FE]"
-              >
-                Reacharge Now
-              </Button>
-            </div>
-          </Card>
-          <Card className="w-full lg:w-1/2 overflow-hidden rounded-2xl border border-blue-gray-00 mt-6 md:mr-2">
-            <div className="m-5">
-              <div className="text-xl font-bold my-1 mb-5 text-black">
-                {" "}
-                Storage
-              </div>
-              <img src={render} alt="" />
+        <div className="md:col-span-1 col-span-1 lg:col-span-1">
+          <div className="lg:flex lg:flex-col md:flex md:flex-col gap-2 h-full">
+            <Card className="w-full overflow-hidden rounded-2xl border border-blue-gray-00 mt-6 md:mr-2">
+              <div className="m-5">
+                <div className="text-xl font-bold my-1 mb-5 text-black">
+                  Balance
+                </div>
+                <div className="text-2xl font-bold my-2 text-black">
+                  <span>$</span>458
+                </div>
+                <div className="flex justify-between my-6">
+                  <div>
+                    <div>Coupon</div>
+                    <div className="text-black text-xl font-bold">$25</div>
+                  </div>
+                  <div className="border-l border-gray-300 pl-4">
+                    <div>Credits</div>
+                    <div className="text-black text-xl font-bold">$0</div>
+                  </div>
+                </div>
 
-              <div className="text-xs text-gray-700 my-4">
-                Hours Remaining{" "}
-                <span className="text-bold text-black">20:59:59</span>
+                <div className="text-xs text-gray-700 text-center my-4">
+                  Hours Remaining{" "}
+                  <span className="text-bold text-black">20:59:59</span>
+                </div>
+                <div className="flex justify-center flex-col">
+                  <Button
+                    variant="outlined"
+                    className="rounded-full border-[#0171FE] text-[#0171FE]"
+                  >
+                    Reacharge Now
+                  </Button>
+                </div>
               </div>
-              <Button
-                variant="outlined"
-                className="rounded-full border-[#0171FE] text-[#0171FE]"
-              >
-                View Details
-              </Button>
-            </div>
-          </Card>
+            </Card>
+            <Card className="w-full overflow-hidden rounded-2xl border border-blue-gray-00 mt-6 md:mr-2">
+              <div className="m-5">
+                <div className="text-xl font-bold my-1 mb-5 text-black">
+                  Storage
+                </div>
+                <div className="flex justify-center flex-col">
+                  <img src={render} alt="" className="mx-auto w-full md:w-72" />
+
+                  <div className="text-xs text-center text-gray-700 my-4">
+                    Hours Remaining{" "}
+                    <span className="text-bold text-black">20:59:59</span>
+                  </div>
+                </div>
+                <div className="flex justify-center flex-col">
+                  <Button
+                    variant="outlined"
+                    className="rounded-full border-[#0171FE] text-[#0171FE]"
+                  >
+                    View Details
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
     </>

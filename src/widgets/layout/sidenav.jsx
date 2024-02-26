@@ -37,7 +37,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
     <aside
       className={`${"bg-[#011627] shadow-lg"} ${
         openSidenav ? "translate-x-0" : "-translate-x-80"
-      } custom-scrollbar fixed inset-0 z-50  h-[calc(100vh)] w-72 overflow-hidden rounded-e-[50px] transition-transform duration-300 hover:overflow-y-auto xl:translate-x-0`}
+      } custom-scrollbar fixed inset-0 z-50  h-[calc(100vh)] w-72 overflow-scroll rounded-e-[50px] transition-transform duration-300 hover:overflow-y-auto xl:translate-x-0`}
     >
       <div className={`relative`}>
         <Link to="/" className="py-6 px-8 text-center">

@@ -62,7 +62,7 @@ export const routes = [
     ],
   },
   {
-    title: <hr className="bg-gray-500 mb-[250px]" />,
+    title: <hr className="bg-gray-500  mb-10" />,
     layout: "auth",
     pages: [
       {
