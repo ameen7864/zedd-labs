@@ -25,7 +25,7 @@ export function DashboardNavbar() {
       blurred={fixedNavbar}
     >
       <div className="flex flex-col-reverse justify-between gap-6 md:flex-row md:items-center">
-        <div className="capitalize flex">
+        <div className="capitalize flex justify-between sm:flex sm:justify-between">
           <IconButton
             variant="text"
             color="blue-gray"
@@ -40,20 +40,24 @@ export function DashboardNavbar() {
             }`}
           >
             <div className="">
-              <div className="w-24">
-                <select name="" id="" className="bg-transparent px-3 font-bold">
+              <div className=" ">
+                <select
+                  name=""
+                  id=""
+                  className="bg-transparent px-3 font-bold sm:mt-2 mt-2"
+                >
                   <option value="">Default Project</option>
                 </select>
               </div>
             </div>
           </Breadcrumbs>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center justify-between ">
           <div className="flex gap-6">
             <IoGiftOutline size={30} color="red" />
             <FaBell size={24} color="black" className="mt-1 mr-3" />
           </div>
-          <div className="mr-auto flex justify-center items-center  ">
+          <div className=" flex  items-center  ">
             <Avatar
               src="https://docs.material-tailwind.com/img/face-2.jpg"
               alt="avatar"
